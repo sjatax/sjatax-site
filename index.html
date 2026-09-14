@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>신정아 세무회계사무소 | 부천 신중동 세무사 | 상속·증여·양도소득세</title>
-<meta name="description" content="부천 신중동 신정아 세무회계사무소. 상속세·증여세·양도세, 개인·법인 기장, 세무조사 대응까지 대표세무사가 직접 검토합니다.">
+<meta name="description" content="부천 신중동 신정아 세무회계사무소. 상속·증여·양도소득세 절세설계와 개인·법인 기장관리를 대표세무사가 직접 검토합니다.">
 <meta name="keywords" content="부천세무사, 신중동세무사, 상속세, 증여세, 양도소득세, 종합소득세, 기장관리, 세무조사, 신정아세무사, 신정아세무회계사무소">
 <meta name="author" content="신정아 세무회계사무소">
 <meta name="robots" content="index, follow">
@@ -361,26 +361,6 @@
   .story-result .r-label{font-size:12px; color:var(--ink-soft);}
   .story-result .r-value{font-family:'Noto Serif KR',serif; font-weight:700; color:var(--gold-600); font-size:17px;}
 
-  /* ---------- Consulting ticker ---------- */
-  .ticker-wrap{background:var(--navy-950); color:#fff; overflow:hidden;}
-  .ticker-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:36px; flex-wrap:wrap; gap:16px;}
-  .ticker-list{
-    display:flex; flex-direction:column; gap:0; border-top:1px solid rgba(255,255,255,0.12);
-  }
-  .ticker-row{
-    display:grid; grid-template-columns:90px 1fr 130px 110px; align-items:center; gap:14px;
-    padding:15px 4px; border-bottom:1px solid rgba(255,255,255,0.12); font-size:13.8px;
-  }
-  @media(max-width:640px){ .ticker-row{grid-template-columns:70px 1fr 90px; } .ticker-row .t-date{display:none;} }
-  .ticker-row .t-tag{
-    font-size:11.5px; font-weight:700; color:var(--gold-400); border:1px solid rgba(203,168,114,0.5);
-    padding:3px 9px; text-align:center; border-radius:20px; justify-self:start;
-  }
-  .ticker-row .t-name{color:rgba(255,255,255,0.88);}
-  .ticker-row .t-name b{color:#fff;}
-  .ticker-row .t-date{color:rgba(255,255,255,0.4); font-size:12.5px; text-align:right;}
-  .ticker-row .t-status{color:var(--gold-400); font-size:12px; text-align:right; font-weight:600;}
-
   /* ---------- Location ---------- */
   .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); background:var(--white);}
   @media(max-width:860px){ .loc-grid{grid-template-columns:1fr;} }
@@ -459,7 +439,6 @@
       <a href="#about">대표세무사</a>
       <a href="#services">업무분야</a>
       <a href="#story">절세성공사례</a>
-      <a href="#consulting">상담사례</a>
       <a href="#location">오시는 길</a>
       <a href="#contact">상담문의</a>
     </nav>
@@ -480,7 +459,6 @@
   <a href="#about">대표세무사</a>
   <a href="#services">업무분야</a>
   <a href="#story">절세성공사례</a>
-  <a href="#consulting">상담사례</a>
   <a href="#location">오시는 길</a>
   <a href="#contact">상담문의</a>
 </div>
@@ -659,20 +637,6 @@
     </div>
 
     <div class="story-grid" id="storyGrid"></div>
-  </div>
-</section>
-
-<!-- CONSULTING TICKER -->
-<section class="section-pad ticker-wrap" id="consulting">
-  <div class="wrap">
-    <div class="ticker-head">
-      <div class="reveal">
-        <div class="eyebrow">Consulting</div>
-        <h2 style="margin-top:14px; font-size:clamp(24px,3vw,32px);">최근 상담사례로 보는<br class="mob-only">실시간 상담신청 현황</h2>
-      </div>
-      <a href="#contact" class="btn btn-outline-light reveal">나도 상담 신청하기</a>
-    </div>
-    <div class="ticker-list" id="tickerList"></div>
   </div>
 </section>
 
@@ -931,31 +895,6 @@ stories.forEach(s => {
     </div>`;
   storyGrid.appendChild(el);
   io.observe(el);
-});
-
-/* ---------- consulting ticker data (illustrative) ---------- */
-const tickers = [
-  ['상속세','신 **','2026.08.29','상담완료'],
-  ['증여세','김 **','2026.08.28','상담완료'],
-  ['양도소득세','박 **','2026.08.27','상담중'],
-  ['기장관리','이 **','2026.08.26','상담완료'],
-  ['종합소득세','최 **','2026.08.24','상담완료'],
-  ['세무조사','정 **','2026.08.22','상담중'],
-  ['법인세','한 **','2026.08.20','상담완료'],
-  ['양도소득세','윤 **','2026.08.19','상담완료'],
-  ['증여세','송 **','2026.08.18','상담완료'],
-  ['상속세','오 **','2026.08.15','상담완료']
-];
-const tickerList = document.getElementById('tickerList');
-tickers.forEach(([tag,name,date,status]) => {
-  const row = document.createElement('div');
-  row.className = 'ticker-row';
-  row.innerHTML = `
-    <span class="t-tag">${tag}</span>
-    <span class="t-name"><b>${name}</b>님의 빠른 상담신청</span>
-    <span class="t-date">${date}</span>
-    <span class="t-status">${status}</span>`;
-  tickerList.appendChild(row);
 });
 
 /* ---------- contact form -> Google Forms (자동 접수) ---------- */
